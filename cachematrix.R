@@ -5,12 +5,12 @@
 ## This function creates a special "matrix" object that can cache its inverse.
 makeCacheMatrix <- function(x = matrix()) {
         invm <- NULL
-        set <- 
-        get <- function() x
-        setinvm <- function(y){
-                x <<- y
+        set <- function(y){
+                x <<-y
                 invm <<- NULL
         }
+        get <- function() x
+        setinvm <- function(inverse) inverse <- invm
         getinvm <- function() invm
         list(set = set, get = get,
              setinvm = setinvm,
